@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,138 +16,33 @@
       sizes="32x32"
       href="./images/favicon-32x32.png" />
     <title>Frontend Mentor | Product preview card component</title>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@500&family=Montserrat:wght@500&family=Schibsted+Grotesk&display=swap");
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Fraunces", serif;
-      }
-      .container {
-        width: 100%;
-        height: 100vh;
-        background-color: hsl(30, 38%, 92%);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .product-box {
-        border-radius: 10px;
-        width: 600px;
-        background-color: white;
-        overflow: hidden;
-        display: flex;
-      }
-
-      .img-box {
-        width: 50%;
-      }
-      .img-box img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .content-box {
-        text-align: left;
-        width: 50%;
-        padding: 30px;
-        display: flex;
-        flex-direction: column;
-      }
-      .font-color {
-        color: hsl(228, 12%, 48%);
-        font-family: "Montserrat";
-        font-size: 14px;
-      }
-      .title {
-        color: hsl(228, 12%, 48%);
-        letter-spacing: 3px;
-        font-weight: 700;
-      }
-      .marg {
-        margin-top: 25px;
-      }
-      .price-box {
-        display: flex;
-        align-items: center;
-      }
-      .price {
-        padding-right: 20px;
-        color: hsl(158, 36%, 37%);
-      }
-      .old-price {
-        font-size: 12px;
-        color: hsl(228, 12%, 48%);
-      }
-      .add-to-cart {
-        color: white;
-        background-color: hsl(158, 36%, 37%);
-        border: none;
-        padding: 15px;
-        font-weight: 700;
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .add-to-cart svg {
-        margin-right: 10px;
-      }
-      .add-to-cart:hover,
-      .add-to-cart:active {
-        background-color: hsl(158, 97%, 12%);
-        cursor: pointer;
-      }
-      @media (max-width: 400px) {
-        .product-box {
-          width: 90%;
-          height: 90%;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-        .img-box {
-          width: 100%;
-          height: 45%;
-        }
-        .content-box {
-          width: 100%;
-          height: 55%;
-        }
-      }
-    </style>
   </head>
   <body>
     <div class="container">
       <div class="product-box">
         <div class="img-box">
-          <img
-            src="images/image-product-desktop.jpg"
-            alt="image-product-desktop" />
+          <picture>
+            <source
+              media="(min-width: 600px)"
+              srcset="./images/image-product-desktop.jpg" />
+            <img
+              src="./images/image-product-mobile.jpg"
+              alt="A good description" />
+          </picture>
         </div>
         <div class="content-box">
-          <p class="title font-color">PERFUME</p>
+          <p class="title font-color">Perfume</p>
           <h1 class="marg">Gabrielle Essence Eau De Parfum</h1>
           <p class="marg font-color">
             A floral, solar and voluptuous interpretation composed by Olivier
-            Polge, Perfumer-Creator for the House of CHANEL
+            Polge, Perfumer-Creator for the House of CHANEL.
           </p>
           <div class="marg price-box">
-            <h1 class="price">$149.99</h1>
+            <p class="price">$149.99</p>
             <p class="old-price"><del>$169.99</del></p>
           </div>
           <button class="marg add-to-cart">
-            <svg width="15" height="16" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M14.383 10.388a2.397 2.397 0 0 0-1.518-2.222l1.494-5.593a.8.8 0 0 0-.144-.695.8.8 0 0
-                 0-.631-.28H2.637L2.373.591A.8.8 0 0 0 1.598 0H0v1.598h.983l1.982 7.4a.8.8 0 0 0 .799.59h8.222a.8.8
-                 0 0 1 0 1.599H1.598a.8.8 0 1 0 0 1.598h.943a2.397 2.397 0 1 0 4.507 0h1.885a2.397 2.397 0 1
-                 0 4.331-.376 2.397 2.397 0 0 0 1.12-2.021ZM11.26 7.99H4.395L3.068 3.196h9.477L11.26 7.991Zm-6.465
-                 6.392a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Zm6.393 0a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Z"
-                fill="#FFF" />
-            </svg>
+            <img src="./images/icon-cart.svg" alt="A Cart Icon" />
             Add to Cart
           </button>
         </div>
